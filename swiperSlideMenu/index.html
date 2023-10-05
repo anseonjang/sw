@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이름 - swiperSlideMenu </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="./css/style.css">
+    
+    <script type="text/JavaScript" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+
+</head>
+<body>
+    <!-- .box>.bullet>.swiper-pagination -->
+    <div class="box">
+        <!-- 인디케이터 - 메뉴 -->
+        <div class="bullet">
+            <div class="swiper-pagination"></div>
+        </div>
+        <!-- 슬라이드 -->
+        <!-- .swiper.mySwiper>.swiper-wrapper>.swiper-slide{Slide $}*3 -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">Slide 1</div>
+                <div class="swiper-slide">Slide 2</div>
+                <div class="swiper-slide">Slide 3</div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script>
+        // 페이지 번호를 담은 배열 정의 
+        var bullet = ['1번', '2번', '3번'];
+        // 스와이퍼 객체생성, 슬라이더 초기화 
+        var swiper = new Swiper(".mySwiper", {
+    pagination: {
+        // 페이지 번호 표시 요소 선택
+        el: ".swiper-pagination", 
+        clickable: true, // 페이지 번호를 클릭하여 슬라이드로 이동
+        // 콜백함수 사용하여 번호 커스터마이징 
+        renderBullet: function (index, className) {
+       // 페이지 번호를 배열에서 가져와 className을 사용하여 스타일을 적용
+       return '<div class="' + className + '"><span>' + (bullet[index]) + '</span></div>';
+        }
+        // 각 페이지 번호의 div를 생성하고 배열 bullet에서 해당 인덱스(index)에 해당하는 번호를 가져와서 출력
+    },
+    });
+    </script>
+</body>
+</html>
