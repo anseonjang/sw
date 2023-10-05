@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 이름 - swiperSlide </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="./css/style.css">
+    <script type="text/JavaScript" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+</head>
+<body>
+    <!-- .box>.swiper.mySwiper>.swiper-wrapper>.swiper-slide*4{Slide $} -->
+    <div class="box">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><a href="#"><img src="./images/1.png" alt="1"></a></div>
+                <div class="swiper-slide"><a href="#"><img src="./images/2.png" alt="2"></a></div>
+                <div class="swiper-slide"><a href="#"><img src="./images/3.png" alt="3"></a></div>
+                <div class="swiper-slide"><a href="#"><img src="./images/4.png" alt="4"></a></div>
+           
+            </div>
+        </div>
+        <!-- 인디케이터 -->
+        <!-- .swiper-pagination+.swiper-scrollbar -->
+        <div class="swiper-pagination"></div>        
+        <!-- 스크롤바 -->
+        <div class="swiper-scrollbar"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script> 
+        // 슬라이드 초기화 + swiper 객체생성
+        var swiper = new Swiper(".mySwiper",{
+            // 터치 활성화 (true로 설정시 활성화됨)
+            allowTouchMove:true, 
+            // 슬라이드 높이 조절하지 않음 
+            autoHeight:false,
+            // 방향설정 - 가로
+            direction:'horizontal', 
+            // 전환효과 - 슬라이드 
+            effect:'slide', 
+            // style - slide, fade, cube, coverflow,flip중 선택하기 
+
+            // 슬라이드 활성화
+            enabled:true,
+            // 슬라이드 무한반복 
+            loop:true,
+            // 화면에 보이는 갯수 설정 
+            slidesPerView:2,
+            // 중앙에 슬라이드 위치시킴
+            centeredSlides:true,
+            // 슬라이드간의 여백 설정 
+            spaceBetween:10,
+            // 마우스휠 사용하여 이동시킴 설정
+            mousewheel:true,
+            // 자동재생간격설정 (1000->1초)
+            autoplay: {
+                delay:2000, 
+            },
+            // 인디케이터
+            pagination:{
+                // 페이지 번호 표시할 요소 선택
+                el:".swiper-pagination",
+                // 클릭시 페이지 번호 슬라이드로 이동시킴 
+                clickable:true,
+            },
+            // 스크롤바
+            scrollbar:{
+                // 스크롤바 표시할 요소 선택
+                el:".swiper-scrollbar",
+                // 스크롤바 숨김처리 하지 않음 
+                hide:false, 
+                // 스크롤바 드래그하여 슬라이드 이동시킴 
+                draggable:true, 
+            },
+        });
+    </script>
+</body>
+</html>
