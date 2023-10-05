@@ -1,0 +1,289 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Malgun Gothic';
+}
+
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    /*border:1px solid red;  추가 */
+    text-decoration: none;
+    color: #333;
+    text-transform: uppercase;
+    /* 소문자를 일괄 대문자로 */
+}
+
+header {
+    background-color: #004c86;
+    width: 100%;
+    height: 100px;
+}
+
+header .nav {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+}
+
+header .nav .inner {
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+header h1 a {
+    color: #fff;
+}
+
+header .nav .inner ul.nav-list {
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 0px; /* 수정 */
+    display: flex;
+}
+
+header .nav .inner ul.nav-list>li {
+    position: relative;
+    padding: 0 38px;
+    width: auto;
+    /* 너비 자동계산 */
+}
+
+header .nav .inner ul.nav-list a {
+    display: block;
+    position: relative;
+}
+
+/* 대메뉴 스타일 */
+header .nav .inner ul.nav-list>li>a {
+    font-size: 17px;
+    color: #fff;
+}
+
+header .nav .inner ul.nav-list>li:hover>a {
+    color: skyblue;
+}
+
+/* 서브메뉴 - 2Depths */
+header .nav .inner ul.nav-list li ul {
+    display: none;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    box-sizing: border-box;
+    /* padding: 20px 0 15px 38px;  주석처리*/
+    z-index: 3;
+    text-align: center;
+    margin-top: 18px; /* 추가 */
+}
+
+header .nav .inner ul.nav-list>li>ul>li>a {
+    display: block;
+    font-size: 14px;
+    color: #fff;
+    margin: 0 0 15px 0;
+    letter-spacing: -1px;
+    height: 30px;
+    line-height: 30px;
+}
+
+header .nav .inner ul.nav-list>li>ul>li>a:hover {
+    opacity: 0.8;
+}
+
+#smenu_bar {
+    position: absolute;
+    top: 100px;
+    width: 100%;
+    background-color: #004c86;
+    min-width: 1200px;
+    min-height: 200px; /* 수정 */
+    border-top: 1px solid #668093; /* 추가 */
+    display: none;
+}
+
+/* 모바일 메뉴 스타일 - 아코디언 - slicknav 플러그인 지침대로 잡아준 class */
+
+.slicknav_menu {
+    display: none;
+    position: absolute;
+    top: 33px;
+    width: 100%;
+    z-index: 2;
+}
+
+/* 토글버튼 */
+.slicknav_btn {
+    position: relative;
+    display: block;
+    float: right;
+    padding: 0;
+    cursor: pointer;
+    margin: 0 20px 0 0;
+}
+
+/* .slicknav_menu .slicknav_icon {
+    float: left;
+    margin: 0;
+} */
+
+/* 토글버튼 라인 */
+.slicknav_menu .slicknav_icon-bar {
+    display: block;
+    width: 35px;
+    height: 3px;
+    background-color: #fff;
+}
+/* 토글버튼 라인 사이의 수직 여백 */
+.slicknav_menu .slicknav_icon-bar+.slicknav_icon-bar {
+    margin-top: 7px;
+}
+
+.slicknav_nav {
+    position: relative;
+    top: 37px;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    clear: both;
+    border-top: 1px solid #333;
+}
+
+.slicknav_nav ul,
+.slicknav_nav ul li {
+    border-bottom: 1px solid #eae9e9;
+}
+
+/* 대메뉴 */
+.slicknav_nav li>a {
+    position: relative;
+    border-bottom: 1px solid #ddd;  /* 추가 */
+    box-sizing: border-box;  /* 추가 */
+}
+
+/* submenu bg */
+.slicknav_nav li ul {
+    border: 0;
+    background-color: #d5d5d5; /* 수정 */
+    padding: 10px 0;
+}
+
+.slicknav_nav li ul li {
+    border-bottom: 0;
+}
+
+.slicknav_nav li ul li a {
+    color: #888;
+}
+.slicknav_nav>li>ul>li>a,
+.slicknav_nav li ul li a.slicknav_item{
+    font-size: 14px;
+    padding: 10px 30px;  
+}
+.slicknav_nav .slicknav_item {
+    display: block;
+}
+
+.slicknav_nav .slicknav_item a {
+    padding: 0; margin: 0;
+}
+
+/* 서브메뉴 hover 추가*/
+.slicknav_nav>li>ul>li>a:hover { 
+    background-color: rgba(0,0,0,0.1);
+    color: #004c86;
+}
+
+
+.slicknav_nav a {
+    display: block;
+    color: #666;
+    padding: 15px;
+}
+.slicknav_menu:after{
+    clear: both;
+}
+/* 모바일 메뉴 text */
+.slicknav_menu .slicknav_menutxt{
+    display: block;
+    line-height: 18px;
+    float: left;
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 0 1px 3px #000;
+    display: none;
+    font-size: 0; /* 추가 */
+}
+.slicknav_nav .slicknav_txtnode{
+    margin-left: 15px;
+}
+/* 더보기버튼 */
+.slicknav_nav .slicknav_arrow{
+    font-size: 0;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 10px;
+}
+.slicknav_nav .slicknav_collapsed .slicknav_item span.slicknav_arrow::before {
+    content: "+";
+    position: absolute;
+    font-size: 17px;
+    opacity: 0.6;
+    width: 10px;
+    height: 10px;
+    line-height: 8px;
+    margin-top: -5px;
+    right: 30px;
+    
+}
+.slicknav_nav .slicknav_open .slicknav_item span.slicknav_arrow::before{
+    content: "-";
+    position: absolute;
+    font-size: 17px;
+    opacity: 0.6;
+    width: 10px;
+    height: 5px;
+    line-height: 0;
+    margin-top: -3px;
+    right: 30px;
+}
+
+/* @media screen and (max-width:1024px) {
+    .inner {
+        width: 96%;
+    }
+} */
+
+@media screen and (max-width:767px) {
+    /* 추가 */
+    #mobile_menu>h1{
+        font-size: 25px;
+        padding: 30px 0 0 20px; 
+    }
+    .nav {
+        display: none;
+    }
+    #memu {
+        display: none;
+    }
+    .slicknav_menu {
+        display: block;
+    }
+    .pn-ProductNav_Wrapper {
+        display: block;
+    }
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>full,accordionMenu</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- <script src="./js/jquery-1.11.3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slicknav@1.0.8/slicknav.min.js"></script> -->
+
+    <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="./js/jquery.slicknav.js"></script>    
+    <script src="./js/jquery.effects.core.js"></script>
+    <script>
+        $(function(){
+            $("#menu").slicknav();
+
+            // PC 구조 메뉴 슬라이드업다운
+            $("#menu>li>a").mouseover(function(){
+                $("#menu>li>ul").slideDown("fast");
+                $("#smenu_bar").slideDown("fast");
+            });
+            $(".nav").mouseleave(function(){
+                $("#menu>li>ul").fadeOut("fast");
+                $("#smenu_bar").fadeOut("fast");
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <!-- header>nav.nav>.inner>h1>a{logo} -->
+    <header>
+        <nav class="nav">
+            <div class="inner">
+                <!-- logo -->
+                <h1><a href="#">logo</a></h1>
+                <!-- menu -->
+<!-- ul.nav-list#menu>(li.in_menu0$>a+ul>(li>a{sub$})*4)*6 -->
+                <ul class="nav-list" id="menu">
+                    <li class="in_menu01">
+                        <a href="#">menu</a>
+                        <ul>
+                            <li><a href="#">sub1</a></li>
+                            <li><a href="#">sub2</a></li>
+                            <li><a href="#">sub3</a></li>
+                            <li><a href="#">sub4</a></li>
+                        </ul>
+                    </li>
+                    <li class="in_menu02">
+                        <a href="">menu</a>
+                        <ul>
+                            <li><a href="#">sub1</a></li>
+                            <li><a href="#">sub2</a></li>
+                            <li><a href="#">sub3</a></li>
+                            <li><a href="#">sub4</a></li>
+                        </ul>
+                    </li>
+                    <li class="in_menu03">
+                        <a href="#">menu</a>
+                        <ul>
+                            <li><a href="#">sub1</a></li>
+                            <li><a href="#">sub2</a></li>
+                            <li><a href="#">sub3</a></li>
+                            <li><a href="#">sub4</a></li>
+                        </ul>
+                    </li>
+                    <li class="in_menu04">
+                        <a href="#">menu</a>
+                        <ul>
+                            <li><a href="#">sub1</a></li>
+                            <li><a href="#">sub2</a></li>
+                            <li><a href="#">sub3</a></li>
+                            <li><a href="#">sub4</a></li>
+                        </ul>
+                    </li>
+                    <li class="in_menu05">
+                        <a href="#">menu</a>
+                        <ul>
+                            <li><a href="#">sub1</a></li>
+                            <li><a href="#">sub2</a></li>
+                            <li><a href="#">sub3</a></li>
+                            <li><a href="#">sub4</a></li>
+                        </ul>
+                    </li>
+                    <li class="in_menu06">
+                        <a href="#">menu</a>
+                        <ul>
+                            <li><a href="#">sub1</a></li>
+                            <li><a href="#">sub2</a></li>
+                            <li><a href="#">sub3</a></li>
+                            <li><a href="#">sub4</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div id="smenu_bar"></div>
+        </nav>
+        <!-- mobile menu -->
+        <!-- #mobile_menu>h1>a{LOGO} -->
+        <div id="mobile_menu">
+            <h1><a href="#">LOGO</a></h1>            
+        </div>
+    </header>
+</body> 
+</html>
